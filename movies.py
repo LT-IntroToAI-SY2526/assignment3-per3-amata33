@@ -436,14 +436,14 @@ movie_db: List[Tuple[str, str, int, List[str]]] = [
         ],
     ),
     (
-        "Sharknado",
-        "Anthony C. Ferrante",
+        "sharknado",
+        "anthony c. ferrante",
         2013,
         [
-            "Ian Ziering",
-            "Cassie Scerbo",
-            "Jaason Simmons",
-            "Adrian Bustamante",
+            "ian ziering",
+            "cassie scerbo",
+            "jaason simmons",
+            "adrian bustamante",
         ],
     )
 ]
