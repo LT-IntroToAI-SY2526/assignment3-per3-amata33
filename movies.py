@@ -435,4 +435,15 @@ movie_db: List[Tuple[str, str, int, List[str]]] = [
             "spike lee",
         ],
     ),
+    (
+        "Sharknado",
+        "Anthony C. Ferrante",
+        2013,
+        [
+            "Ian Ziering",
+            "Cassie Scerbo",
+            "Jaason Simmons",
+            "Adrian Bustamante",
+        ],
+    )
 ]
