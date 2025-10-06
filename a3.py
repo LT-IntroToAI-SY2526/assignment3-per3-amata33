@@ -66,7 +66,8 @@ def title_by_year(matches: List[str]) -> List[str]:
 def title_by_year_range(matches: List[str]) -> List[str]:
     """Finds all movies made in the passed in year range
     
-    
+    jajajajajajajajajajajajajjajajajajajajajajajajajajajajajajajajajajjajaja.
+
     Args:
         matches - a list of 2 strings, the year beginning the range and the year ending
             the range. For example, to get movies from 1991-1994 matches would look like
@@ -81,7 +82,7 @@ def title_by_year_range(matches: List[str]) -> List[str]:
     end_result = int(matches[1])
     result = []
     for movie in movie_db:
-        if start_year <= get_year(movie) == year:
+        if start_year <= get_year(movie) == start_year:
             result.append(get_title(movie))
     return result
     
@@ -214,6 +215,15 @@ def title_by_actor(matches: List[str]) -> List[str]:
             result.append(get_title(movie))
     return result
 
+def moviesByDirector(matches: List[str]) -> List[str]:
+    director = matches[0]
+    result = []
+    for movie in movie_db:
+        if director in get_director(movie):
+            result.append(get_title(movie))
+    return result
+
+
 
 # dummy argument is ignored and doesn't matter
 def bye_action(dummy: List[str]) -> None:
@@ -240,6 +250,7 @@ pa_list: List[Tuple[List[str], Callable[[List[str]], List[Any]]]] = [
 
 
 def search_pa_list(src: List[str]) -> List[str]:
+    print(f"Searching: {src}") #src is a variable
     """Takes source, finds matching pattern and calls corresponding action. If it finds
     a match but has no answers it returns ["No answers"]. If it finds no match it
     returns ["I don't understand"].
@@ -251,7 +262,13 @@ def search_pa_list(src: List[str]) -> List[str]:
         a list of answers. Will be ["I don't understand"] if it finds no matches and
         ["No answers"] if it finds a match but no answers
     """
-    pass
+    for pat, act in pa_list:
+        mat = match(pat, src)
+        # mat is None if no match. mat is a list if there's a match
+    if match is not None:
+        answer = act(mat)
+        return answer if answer else ["No answers"]
+    return "I dont understand!"
 
 
 def query_loop() -> None:
