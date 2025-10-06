@@ -350,17 +350,17 @@ if __name__ == "__main__":
     assert sorted(
         search_pa_list(["what", "movies", "were", "made", "in", "2020"])
     ) == sorted(["No answers"]), "failed search_pa_list test 3"
-    assert isinstance(actors_by_title(["Sharknado"]), list), "actors_by_title not returning a list"
-    assert sorted(actors_by_title(["Sharknado"])) == sorted(
+    assert isinstance(actors_by_title(["sharknado"]), list), "actors_by_title not returning a list"
+    assert sorted(actors_by_title(["sharknado"])) == sorted(
         [
-            "Ian Ziering",
-            "Cassie Scerbo",
-            "Jaason Simmons",
-            "Adrian Bustamante",
+            "ian ziering",
+            "cassie scerbo",
+            "jaason simmons",
+            "adrian bustamante",
         ]
     ), "failed actors_by_title test"
-    assert isinstance(title_by_director(["Anthony C. Ferrante"]), list), "title_by_director not returning a list"
-    assert sorted(title_by_director(["Anthony C. Ferrante"])) == sorted(
-        ["Sharknado"]
+    assert isinstance(title_by_director(["anthony c. ferrante"]), list), "title_by_director not returning a list"
+    assert sorted(title_by_director(["anthony c. ferrante"])) == sorted(
+        ["sharknado"]
     )
     print("All tests passed!")
